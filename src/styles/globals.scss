@@ -536,22 +536,22 @@
     /* Allow navbar items to take up available space */
 }
 .submenu {
-    position: absolute;
+    // position: absolute;
     /* Ensures it's positioned relative to the parent */
     // top: 100%;
     /* Position it directly below the parent */
 
     /* Align to the left edge */
-    width: auto !important;
+    // width: auto !important;
     /* Full width of the viewport */
     background-color: rgba(223, 222, 226, 0.7) !important;
     /* Match the navbar color or use a shade */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     /* Add shadow for depth */
-    z-index: 1000;
+    // z-index: 1000;
     /* Make sure it sits on top of other elements */
-    display: flex;
-    justify-content: space-around;
+    // display: flex;
+    // justify-content: space-around;
     /* Stack items vertically */
     padding: 10px 0;
     margin-top: 30px !important;
@@ -566,7 +566,7 @@
     transition: background-color 0.3s;
     /* Smooth background transition */
 
-    display: flex;
+    display: block;
 
 }
 .title {
@@ -645,4 +645,11 @@
     /* Center horizontally */
     transform: translate(-50%, -50%);
     /* Adjust to center */
+}
+
+@media (max-width:991px) {
+    .submenu {
+        display: flex !important;
+        flex-direction: column !important;
+    }
 }
