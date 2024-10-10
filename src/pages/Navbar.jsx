@@ -13,7 +13,7 @@ const Navbar = () => {
 
 
   const toggleMode = () => {
-    setIsLogin(!isLogin); // Switch between login and signup
+    setIsLogin(!isLogin); 
   };
 
 
@@ -94,7 +94,6 @@ const Navbar = () => {
                   <span className="title">Retail</span>
                 </li>
               </ul>
-
 
 
             </div>
