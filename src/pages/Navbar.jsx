@@ -45,6 +45,7 @@ const Navbar = () => {
                 {/* Submenu */}
               </a>
               <ul className="submenu d-flex list-unstyled dropdown-menu   fade-up m-0">
+              <Link href="/markets/Automative">
                 <li className="position-relative dropdown-item "> {/* Added position-relative */}
                   <div className={`arrow first-arrow d-lg-block d-none rounded-circle`}>
                     <GoArrowRight />
@@ -54,9 +55,12 @@ const Navbar = () => {
                       src="Image/automotive-background-768x512.jpg"
                       alt="automotive"
                     />
-                  </div>
+                  </div> 
+                  
                   <span className="title">Automative</span>
                 </li>
+                </Link>
+               <Link href="/markets/Consumer">
                 <li className="position-relative dropdown-item ">
                   <div className={`arrow second-arrow d-lg-block d-none rounded-circle`}>
                     <GoArrowRight />
@@ -69,6 +73,7 @@ const Navbar = () => {
                   </div>
                   <span className="title">Consumer</span>
                 </li>
+                </Link>
                 <li className="position-relative dropdown-item ">
                   <div className={`arrow third-arrow d-lg-block d-none rounded-circle`}>
                     <GoArrowRight />

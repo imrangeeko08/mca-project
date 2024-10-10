@@ -1,6 +1,7 @@
 "use client";
 import "@/styles/globals.scss";
 import "@/styles/bootstrap.scss";
+import "@/pages/markets/market.scss";
 import { useEffect } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
