@@ -10,14 +10,12 @@ const Navbar = () => {
   const router = useRouter();
   const isActive = (path) => router.pathname === path;
   const [isLogin, setIsLogin] = useState(true); // Toggle state between login and signup
-  const [isMarketsOpen, setMarketsOpen] = useState(false); // State for submenu visibility
+
 
   const toggleMode = () => {
     setIsLogin(!isLogin); // Switch between login and signup
   };
 
-  const handleMouseEnter = () => setMarketsOpen(true);
-  const handleMouseLeave = () => setMarketsOpen(false);
 
   return (
     <div>
@@ -38,67 +36,66 @@ const Navbar = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarCollapse">
           <div className="navbar-nav ms-5 gap-4 p-4 p-lg-0 me-auto position-relative">
-            <Link href="/" legacyBehavior>
+            <Link href="/" legacyBehavior className="dropdown nav-item">
               <a
                 className={`nav-item nav-link ${isActive("/") ? "active" : ""}`}
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
+
               >
                 MARKETS <FaChevronDown className={`ms-1`} />
                 {/* Submenu */}
-                {isMarketsOpen && (
-                  <ul className="submenu row list-unstyled">
-                    <li className="position-relative col-3"> {/* Added position-relative */}
-                      <div className={`arrow first-arrow  rounded-circle`}>
-                        <GoArrowRight />
-                      </div>
-                      <div className="image-container"> {/* New container for image */}
-                        <img
-                          src="Image/automotive-background-768x512.jpg"
-                          alt="automotive"
-                        />
-                      </div>
-                      <span className="title">Automative</span>
-                    </li>
-                    <li className="position-relative col-3">
-                      <div className={`arrow second-arrow  rounded-circle`}>
-                        <GoArrowRight />
-                      </div>
-                      <div className="image-container">
-                        <img
-                          src="Image/consumer-background-768x512.jpg"
-                          alt="consumer"
-                        />
-                      </div>
-                      <span className="title">Consumer</span>
-                    </li>
-                    <li className="position-relative col-3">
-                      <div className={`arrow third-arrow  rounded-circle`}>
-                        <GoArrowRight />
-                      </div>
-                      <div className="image-container">
-                        <img
-                          src="Image/industrial-background-768x512.jpg"
-                          alt="industrial"
-                        />
-                      </div>
-                      <span className="title">Industrial</span>
-                    </li>
-                    <li className="position-relative col-3">
-                      <div className={`arrow fourth-arrow  rounded-circle`}>
-                        <GoArrowRight />
-                      </div>
-                      <div className="image-container">
-                        <img
-                          src="Image/retail-background-768x576.jpg"
-                          alt="retail"
-                        />
-                      </div>
-                      <span className="title">Retail</span>
-                    </li>
-                  </ul>
 
-                )}
+                <ul className="submenu d-flex list-unstyled dropdown-menu fade-up m-0">
+                  <li className="position-relative "> {/* Added position-relative */}
+                    <div className={`arrow first-arrow  rounded-circle`}>
+                      <GoArrowRight />
+                    </div>
+                    <div className="image-container"> {/* New container for image */}
+                      <img
+                        src="Image/automotive-background-768x512.jpg"
+                        alt="automotive"
+                      />
+                    </div>
+                    <span className="title">Automative</span>
+                  </li>
+                  <li className="position-relative ">
+                    <div className={`arrow second-arrow  rounded-circle`}>
+                      <GoArrowRight />
+                    </div>
+                    <div className="image-container">
+                      <img
+                        src="Image/consumer-background-768x512.jpg"
+                        alt="consumer"
+                      />
+                    </div>
+                    <span className="title">Consumer</span>
+                  </li>
+                  <li className="position-relative ">
+                    <div className={`arrow third-arrow  rounded-circle`}>
+                      <GoArrowRight />
+                    </div>
+                    <div className="image-container">
+                      <img
+                        src="Image/industrial-background-768x512.jpg"
+                        alt="industrial"
+                      />
+                    </div>
+                    <span className="title">Industrial</span>
+                  </li>
+                  <li className="position-relative ">
+                    <div className={`arrow fourth-arrow  rounded-circle`}>
+                      <GoArrowRight />
+                    </div>
+                    <div className="image-container">
+                      <img
+                        src="Image/retail-background-768x576.jpg"
+                        alt="retail"
+                      />
+                    </div>
+                    <span className="title">Retail</span>
+                  </li>
+                </ul>
+
+
               </a>
             </Link>
             <Link href="/About" legacyBehavior>

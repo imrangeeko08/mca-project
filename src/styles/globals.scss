@@ -542,9 +542,9 @@
     /* Position it directly below the parent */
 
     /* Align to the left edge */
-    width: 1150px;
+    width: auto !important;
     /* Full width of the viewport */
-    background-color: rgba(223, 222, 226, 0.7);
+    background-color: rgba(223, 222, 226, 0.7) !important;
     /* Match the navbar color or use a shade */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     /* Add shadow for depth */
@@ -645,10 +645,4 @@
     /* Center horizontally */
     transform: translate(-50%, -50%);
     /* Adjust to center */
-}
-
-@media (max-width:1024px) {
-    .submenu {
-        width: 900px;
-    }
 }
