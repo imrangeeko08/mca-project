@@ -1,25 +1,23 @@
-'use client';
+"use client";
 import React from "react";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import Link from "next/link";
-import { FaChevronDown } from 'react-icons/fa';
+import { FaChevronDown } from "react-icons/fa";
 import { GoArrowRight } from "react-icons/go";
 
 const Navbar = () => {
   const router = useRouter();
-  const isActive = (path) => router.pathname === path;
+  const isActive = path => router.pathname === path;
   const [isLogin, setIsLogin] = useState(true); // Toggle state between login and signup
-
 
   const toggleMode = () => {
     setIsLogin(!isLogin);
   };
 
-
   return (
     <div>
-      <nav className="navbar navbar-expand-lg bg-white navbar-light shadow border-top border-5 border-primary position-fixed w-100 top-0 z-100 p-0">
+      <nav className="navbar navbar-expand-lg bg-white navbar-light shadow border-top border-5 border-primary top-0 sticky-top w-100  z-100 p-0">
         <a
           href="/"
           className="navbar-brand bg-primary d-flex align-items-center px-4 px-lg-5"
@@ -38,31 +36,39 @@ const Navbar = () => {
           <div className="navbar-nav ms-5 gap-4 p-4 p-lg-0 me-auto position-relative">
             <div legacyBehavior className="dropdown nav-item  ">
               <a
-                className={`nav-item dropdown-toggle nav-link ${isActive("/") ? "active" : ""}`}
-
+                className={`nav-item dropdown-toggle nav-link ${
+                  isActive("/") ? "active" : ""
+                }`}
               >
                 MARKETS <FaChevronDown className={`ms-1`} />
                 {/* Submenu */}
               </a>
               <ul className="submenu d-flex list-unstyled dropdown-menu   fade-up m-0">
                 <Link href="/markets/Automative">
-                  <li className="position-relative dropdown-item "> {/* Added position-relative */}
-                    <div className={`arrow first-arrow d-lg-block d-none rounded-circle`}>
+                  <li className="position-relative dropdown-item ">
+                    {" "}
+                    {/* Added position-relative */}
+                    <div
+                      className={`arrow first-arrow d-lg-block d-none rounded-circle`}
+                    >
                       <GoArrowRight />
                     </div>
-                    <div className="image-container d-lg-block d-none"> {/* New container for image */}
+                    <div className="image-container d-lg-block d-none">
+                      {" "}
+                      {/* New container for image */}
                       <img
                         src="Image/automotive-background-768x512.jpg"
                         alt="automotive"
                       />
                     </div>
-
                     <span className="title">Automative</span>
                   </li>
                 </Link>
                 <Link href="/markets/Consumer">
                   <li className="position-relative dropdown-item ">
-                    <div className={`arrow second-arrow d-lg-block d-none rounded-circle`}>
+                    <div
+                      className={`arrow second-arrow d-lg-block d-none rounded-circle`}
+                    >
                       <GoArrowRight />
                     </div>
                     <div className="image-container d-lg-block d-none">
@@ -76,7 +82,9 @@ const Navbar = () => {
                 </Link>
                 <Link href="/markets/Industrial">
                   <li className="position-relative dropdown-item ">
-                    <div className={`arrow third-arrow d-lg-block d-none rounded-circle`}>
+                    <div
+                      className={`arrow third-arrow d-lg-block d-none rounded-circle`}
+                    >
                       <GoArrowRight />
                     </div>
                     <div className="image-container d-lg-block d-none">
@@ -88,22 +96,23 @@ const Navbar = () => {
                     <span className="title">Industrial</span>
                   </li>
                 </Link>
-
-                <li className="position-relative dropdown-item ">
-                  <div className={`arrow fourth-arrow d-lg-block d-none  rounded-circle`}>
-                    <GoArrowRight />
-                  </div>
-                  <div className="image-container d-lg-block d-none">
-                    <img
-                      src="Image/retail-background-768x576.jpg"
-                      alt="retail"
-                    />
-                  </div>
-                  <span className="title">Retail</span>
-                </li>
+                <Link href="/markets/Retail">
+                  <li className="position-relative dropdown-item ">
+                    <div
+                      className={`arrow fourth-arrow d-lg-block d-none  rounded-circle`}
+                    >
+                      <GoArrowRight />
+                    </div>
+                    <div className="image-container d-lg-block d-none">
+                      <img
+                        src="Image/retail-background-768x576.jpg"
+                        alt="retail"
+                      />
+                    </div>
+                    <span className="title">Retail</span>
+                  </li>
+                </Link>
               </ul>
-
-
             </div>
             {/* <Link href="/About" legacyBehavior>
               <a className={`nav-item nav-link ${isActive("/About") ? "active" : ""}`}>
@@ -120,30 +129,49 @@ const Navbar = () => {
               </a>
               <div className="dropdown-menu fade-up m-0">
                 <Link href="/About" legacyBehavior>
-                  <a className={`dropdown-item ${isActive("/price") ? "active" : ""}`}>
+                  <a
+                    className={`dropdown-item ${
+                      isActive("/price") ? "active" : ""
+                    }`}
+                  >
                     Company overviwe
                   </a>
                 </Link>
                 <Link href="/ManagmentTeams" legacyBehavior>
-                  <a className={`dropdown-item ${isActive("/features") ? "active" : ""}`}>
+                  <a
+                    className={`dropdown-item ${
+                      isActive("/features") ? "active" : ""
+                    }`}
+                  >
                     Managment Teams
                   </a>
                 </Link>
                 <Link href="/BusinessTerms" legacyBehavior>
-                  <a className={`dropdown-item ${isActive("/quote") ? "active" : ""}`}>
+                  <a
+                    className={`dropdown-item ${
+                      isActive("/quote") ? "active" : ""
+                    }`}
+                  >
                     Business Terms
                   </a>
                 </Link>
                 <Link href="/CodesOfConduct" legacyBehavior>
-                  <a className={`dropdown-item ${isActive("/team") ? "active" : ""}`}>
+                  <a
+                    className={`dropdown-item ${
+                      isActive("/team") ? "active" : ""
+                    }`}
+                  >
                     Codes of Conduct
                   </a>
                 </Link>
-
               </div>
             </div>
             <Link href="/Services" legacyBehavior>
-              <a className={`nav-item nav-link ${isActive("/Services") ? "active" : ""}`}>
+              <a
+                className={`nav-item nav-link ${
+                  isActive("/Services") ? "active" : ""
+                }`}
+              >
                 Services <FaChevronDown className={`ms-1`} />
               </a>
             </Link>
@@ -158,27 +186,47 @@ const Navbar = () => {
               </a>
               <div className="dropdown-menu fade-up m-0">
                 <Link href="/price" legacyBehavior>
-                  <a className={`dropdown-item ${isActive("/price") ? "active" : ""}`}>
+                  <a
+                    className={`dropdown-item ${
+                      isActive("/price") ? "active" : ""
+                    }`}
+                  >
                     Pricing Plan
                   </a>
                 </Link>
                 <Link href="/features" legacyBehavior>
-                  <a className={`dropdown-item ${isActive("/features") ? "active" : ""}`}>
+                  <a
+                    className={`dropdown-item ${
+                      isActive("/features") ? "active" : ""
+                    }`}
+                  >
                     Features
                   </a>
                 </Link>
                 <Link href="/quote" legacyBehavior>
-                  <a className={`dropdown-item ${isActive("/quote") ? "active" : ""}`}>
+                  <a
+                    className={`dropdown-item ${
+                      isActive("/quote") ? "active" : ""
+                    }`}
+                  >
                     Free Quote
                   </a>
                 </Link>
                 <Link href="/team" legacyBehavior>
-                  <a className={`dropdown-item ${isActive("/team") ? "active" : ""}`}>
+                  <a
+                    className={`dropdown-item ${
+                      isActive("/team") ? "active" : ""
+                    }`}
+                  >
                     Our Team
                   </a>
                 </Link>
                 <Link href="/testimonial" legacyBehavior>
-                  <a className={`dropdown-item ${isActive("/testimonial") ? "active" : ""}`}>
+                  <a
+                    className={`dropdown-item ${
+                      isActive("/testimonial") ? "active" : ""
+                    }`}
+                  >
                     Testimonial
                   </a>
                 </Link>
@@ -186,7 +234,11 @@ const Navbar = () => {
             </div>
 
             <Link href="/Contact" legacyBehavior>
-              <a className={`nav-item nav-link ${isActive("/Contact") ? "active" : ""}`}>
+              <a
+                className={`nav-item nav-link ${
+                  isActive("/Contact") ? "active" : ""
+                }`}
+              >
                 Contact
               </a>
             </Link>
@@ -200,7 +252,12 @@ const Navbar = () => {
                 Login
               </button>
             </Link>
-            <Link href=""> <button className="btn btn-primary mt-3 mx-2  w-100">Get a Free Quote</button></Link>
+            <Link href="">
+              {" "}
+              <button className="btn btn-danger border-0 btn-outline-dark mt-3  rounded-1 p-2 text-white  w-100">
+                Get a Free Quote
+              </button>
+            </Link>
           </div>
         </div>
       </nav>

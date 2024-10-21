@@ -9,10 +9,11 @@
   align-items: center;
   text-align: center;
   height: 400px;
+  overflow: hidden !important;
   @media (min-width: 576px) {
 
-    // border-bottom-right-radius: 20%;
-    // border-bottom-left-radius: 20%;
+    border-bottom-right-radius: 100% 20%;
+    border-bottom-left-radius: 100% 20%;
   }
 
   .banner-text {
@@ -83,5 +84,14 @@
     background: linear-gradient(to bottom, #00103a 0%, rgba(0, 16, 58, 0.98) 17%, rgba(0, 16, 58, 0.89) 31%, rgba(0, 16, 58, 0.81) 38%, rgba(0, 16, 58, 0.69) 45%, rgba(0, 16, 58, 0.3) 67%, rgba(0, 16, 58, 0.1) 85%, transparent 100%),
 
       url('/Image/industrial-background-1920x1080.jpg');
+  }
+}
+
+
+.Retail {
+  .automative-banner {
+    background: linear-gradient(to bottom, #00103a 0%, rgba(0, 16, 58, 0.98) 17%, rgba(0, 16, 58, 0.89) 31%, rgba(0, 16, 58, 0.81) 38%, rgba(0, 16, 58, 0.69) 45%, rgba(0, 16, 58, 0.3) 67%, rgba(0, 16, 58, 0.1) 85%, transparent 100%),
+
+      url('/Image/retail-background-1920x1080.jpg');
   }
 }

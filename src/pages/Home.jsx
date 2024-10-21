@@ -570,7 +570,7 @@ export default function Home() {
       {/* <!-- Feature End --> */}
 
       {/* <!-- Pricing Start --> */}
-      <div className="container-xxl py-5">
+      {/* <div className="container-xxl py-5">
         <div className="container py-5">
           <div className="text-center wow fadeInUp" data-aos="fade-up" data-aos-delay="100">
             <h6 className="text-secondary text-uppercase">Pricing Plan</h6>
@@ -648,7 +648,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* <!-- Pricing End --> */}
 
       {/* <!-- Quote Start --> */}

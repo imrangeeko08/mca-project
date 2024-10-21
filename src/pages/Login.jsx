@@ -37,19 +37,19 @@ const Login = () => {
     };
 
     return (
-        <div className="min-vh-100 d-flex align-items-center justify-content-center bg-gradient login-form">
+        <div className="min-vh-100 mt-5 d-flex align-items-center justify-content-center bg-gradient login-form">
             {/* Background Pattern Overlay */}
             <div className="position-absolute top-0 bottom-0 start-0 end-0 bg-cover opacity-10" style={{ backgroundImage: "url('/api/placeholder/1920/1080')" }} />
 
 
 
             {/* Main Content */}
-            <div className="position-relative  z-index-10 max-w-md p-4">
+            <div className="position-relative mt-5 z-index-10 max-w-md p-2">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="bg-light bg-opacity-10 backdrop-blur-lg rounded-4 shadow-lg p-5"
+                    className="bg-light bg-opacity-10 backdrop-blur-lg rounded-4 shadow-lg p-3"
                 >
                     {/* Logo and Title */}
                     <div className="text-center mb-4">

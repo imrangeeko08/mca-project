@@ -47,21 +47,21 @@ const Signup = () => {
     };
 
     return (
-        <div className="min-vh-100 d-flex align-items-center justify-content-center bg-gradient position-relative overflow-hidden">
+        <div className="min-vh-100  d-flex align-items-center justify-content-center bg-gradient position-relative overflow-hidden">
             {/* Background Image */}
-            <div className="position-absolute top-0 start-0 w-100 h-100 bg-cover opacity-10" style={{ backgroundImage: "url('/api/placeholder/1920/1080')" }}></div>
+            <div className="position-absolute  top-0 start-0 w-100  bg-cover opacity-10" style={{ backgroundImage: "url('/api/placeholder/1920/1080')" }}></div>
 
             {/* Main Content */}
-            <div className="relative z-10 col-12 col-sm-6 p-4">
+            <div className="relative z-10 col-12 mt-5  top-50  col-sm-6  p-2">
 
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="bg-white bg-opacity-10 backdrop-blur-lg rounded-2xl shadow-lg p-5"
+                    className="bg-white bg-opacity-10 backdrop-blur-lg  shadow-lg p-5 rounded-4"
                 >
                     {/* Logo and Title */}
-                    <div className="text-center mb-4">
+                    <div className="text-center mb-2">
                         <motion.div
                             initial={{ scale: 0 }}
                             animate={{ scale: 1 }}
@@ -91,13 +91,13 @@ const Signup = () => {
                     {/* Signup Form */}
                     <form onSubmit={handleSubmit}>
                         {/* First Name */}
-                        <div className="mb-3">
-                            <label htmlFor="firstName" className="form-label text-light">First Name</label>
+                        <div className="mb-2">
+                            <label htmlFor="firstName" className="form-label text-light">Full Name</label>
                             <input
                                 type="text"
                                 id="firstName"
                                 className="form-control  border-0  rounded-1 "
-                                placeholder="Enter your first name"
+                                placeholder="Enter your full name"
                                 value={formData.firstName}
                                 onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
                             />
@@ -105,7 +105,7 @@ const Signup = () => {
                         </div>
 
                         {/* Last Name */}
-                        <div className="mb-3">
+                        {/* <div className="mb-3">
                             <label htmlFor="lastName" className="form-label text-light">Last Name</label>
                             <input
                                 type="text"
@@ -116,7 +116,7 @@ const Signup = () => {
                                 onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
                             />
                             {errors.lastName && <div className="text-danger small mt-1">{errors.lastName}</div>}
-                        </div>
+                        </div> */}
 
                         {/* Email */}
                         <div className="mb-3">
@@ -177,7 +177,7 @@ const Signup = () => {
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
                             type="submit"
-                            className="btn btn-primary w-100 py-2"
+                            className="btn btn-primary w-100 py-2 rounded-3"
                         >
                             Sign Up
                         </motion.button>
