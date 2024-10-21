@@ -56,6 +56,9 @@
 }
 
 /*** Navbar ***/
+.navbar {
+    z-index: 1000 !important;
+}
 .navbar .dropdown-toggle::after {
     border: none !important;
     font-family: "Font Awesome 5 Free" !important;

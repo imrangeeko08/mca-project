@@ -19,7 +19,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav className="navbar navbar-expand-lg bg-white navbar-light shadow border-top border-5 border-primary sticky-top p-0">
+      <nav className="navbar navbar-expand-lg bg-white navbar-light shadow border-top border-5 border-primary position-fixed w-100 top-0 z-100 p-0">
         <a
           href="/"
           className="navbar-brand bg-primary d-flex align-items-center px-4 px-lg-5"

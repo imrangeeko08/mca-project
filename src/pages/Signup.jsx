@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Link from 'next/link';
 
 const Signup = () => {
@@ -72,7 +71,7 @@ const Signup = () => {
                         >
                             <svg
                                 className="text-primary"
-                                style={{ width: '2rem', height: '2rem' }}
+                                style={{ width: '4rem', height: '4rem' }}
                                 fill="none"
                                 stroke="currentColor"
                                 viewBox="0 0 24 24"
