@@ -13,7 +13,7 @@ const Navbar = () => {
 
 
   const toggleMode = () => {
-    setIsLogin(!isLogin); 
+    setIsLogin(!isLogin);
   };
 
 
@@ -45,34 +45,34 @@ const Navbar = () => {
                 {/* Submenu */}
               </a>
               <ul className="submenu d-flex list-unstyled dropdown-menu   fade-up m-0">
-              <Link href="/markets/Automative">
-                <li className="position-relative dropdown-item "> {/* Added position-relative */}
-                  <div className={`arrow first-arrow d-lg-block d-none rounded-circle`}>
-                    <GoArrowRight />
-                  </div>
-                  <div className="image-container d-lg-block d-none"> {/* New container for image */}
-                    <img
-                      src="Image/automotive-background-768x512.jpg"
-                      alt="automotive"
-                    />
-                  </div> 
-                  
-                  <span className="title">Automative</span>
-                </li>
+                <Link href="/markets/Automative">
+                  <li className="position-relative dropdown-item "> {/* Added position-relative */}
+                    <div className={`arrow first-arrow d-lg-block d-none rounded-circle`}>
+                      <GoArrowRight />
+                    </div>
+                    <div className="image-container d-lg-block d-none"> {/* New container for image */}
+                      <img
+                        src="Image/automotive-background-768x512.jpg"
+                        alt="automotive"
+                      />
+                    </div>
+
+                    <span className="title">Automative</span>
+                  </li>
                 </Link>
-               <Link href="/markets/Consumer">
-                <li className="position-relative dropdown-item ">
-                  <div className={`arrow second-arrow d-lg-block d-none rounded-circle`}>
-                    <GoArrowRight />
-                  </div>
-                  <div className="image-container d-lg-block d-none">
-                    <img
-                      src="Image/consumer-background-768x512.jpg"
-                      alt="consumer"
-                    />
-                  </div>
-                  <span className="title">Consumer</span>
-                </li>
+                <Link href="/markets/Consumer">
+                  <li className="position-relative dropdown-item ">
+                    <div className={`arrow second-arrow d-lg-block d-none rounded-circle`}>
+                      <GoArrowRight />
+                    </div>
+                    <div className="image-container d-lg-block d-none">
+                      <img
+                        src="Image/consumer-background-768x512.jpg"
+                        alt="consumer"
+                      />
+                    </div>
+                    <span className="title">Consumer</span>
+                  </li>
                 </Link>
                 <li className="position-relative dropdown-item ">
                   <div className={`arrow third-arrow d-lg-block d-none rounded-circle`}>
@@ -102,11 +102,43 @@ const Navbar = () => {
 
 
             </div>
-            <Link href="/About" legacyBehavior>
+            {/* <Link href="/About" legacyBehavior>
               <a className={`nav-item nav-link ${isActive("/About") ? "active" : ""}`}>
                 About US <FaChevronDown className={`ms-1`} />
+              </a> 
+            </Link> */}
+            <div className="nav-item dropdown">
+              <a
+                href=""
+                className="nav-link dropdown-toggle fs-2"
+                data-bs-toggle="dropdown"
+              >
+                About US <FaChevronDown className={`ms-1`} />
               </a>
-            </Link>
+              <div className="dropdown-menu fade-up m-0">
+                <Link href="/About" legacyBehavior>
+                  <a className={`dropdown-item ${isActive("/price") ? "active" : ""}`}>
+                    Company overviwe
+                  </a>
+                </Link>
+                <Link href="/ManagmentTeams" legacyBehavior>
+                  <a className={`dropdown-item ${isActive("/features") ? "active" : ""}`}>
+                    Managment Teams
+                  </a>
+                </Link>
+                <Link href="/BusinessTerms" legacyBehavior>
+                  <a className={`dropdown-item ${isActive("/quote") ? "active" : ""}`}>
+                    Business Terms
+                  </a>
+                </Link>
+                <Link href="/CodesOfConduct" legacyBehavior>
+                  <a className={`dropdown-item ${isActive("/team") ? "active" : ""}`}>
+                    Codes of Conduct
+                  </a>
+                </Link>
+
+              </div>
+            </div>
             <Link href="/Services" legacyBehavior>
               <a className={`nav-item nav-link ${isActive("/Services") ? "active" : ""}`}>
                 Services <FaChevronDown className={`ms-1`} />
@@ -155,22 +187,23 @@ const Navbar = () => {
                 Contact
               </a>
             </Link>
-            <Link href="#" legacyBehavior>
+            <Link href="/Login" legacyBehavior>
               <button
                 className="btn btn-danger text-white h-25 mt-3 mx-2 border-0 btn-outline-dark"
-                data-bs-toggle="modal"
-                data-bs-target="#loginModal"
+                // data-bs-toggle="modal"
+                // data-bs-target="#loginModal"
                 style={{ padding: "8px 16px", borderRadius: "5px" }}
               >
                 Login
               </button>
             </Link>
+            <Link href=""> <button className="btn btn-primary mt-3 mx-2  w-100">Get a Free Quote</button></Link>
           </div>
         </div>
       </nav>
 
       {/* form */}
-      <div
+      {/* <div
         className="modal fade"
         id="loginModal"
         tabIndex="-1"
@@ -264,7 +297,7 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

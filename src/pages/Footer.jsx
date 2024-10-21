@@ -15,7 +15,7 @@ const Footer = () => {
       <div
         className="container-fluid bg-dark text-light footer pt-5 wow fadeIn"
         data-wow-delay="0.1s"
-        style={{ marginTop: "6rem" }}
+      // style={{ marginTop: "6rem" }}
       >
         <div className="container py-5">
           <div className="row g-5">
