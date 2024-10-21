@@ -36,7 +36,7 @@ const Automative = () => {
     {
       stageNumber: 4,
       imagePath: "/Image/consumer_advantage_4-768x512.jpg",
-      altText: "Stage 3",
+      altText: "Stage 4",
       heading: "Returns management",
       description: "Inspect and sort inventory for re-stock or other distribution, with customized reporting and management.",
       duration: 1200
@@ -44,7 +44,7 @@ const Automative = () => {
     {
       stageNumber: 5,
       imagePath: "/Image/consumer_advantage_5.jpg",
-      altText: "Stage 3",
+      altText: "Stage 5",
       heading: "Product distribution support",
       description: "We act as your virtual distribution center (DC) network, offering space to accommodate seasonal volume surges.",
       duration: 1200
@@ -52,7 +52,7 @@ const Automative = () => {
     {
       stageNumber: 6,
       imagePath: "/Image/consumer_advantage_6.jpg",
-      altText: "Stage 3",
+      altText: "Stage 6",
       heading: "Transportation services",
       description: "Global sea, land and air freight management and streamlined multimodal transportation keeps you on time and under budget.",
       duration: 1200
@@ -60,7 +60,7 @@ const Automative = () => {
     {
       stageNumber: 7,
       imagePath: "/Image/consumer_advantage_7.png",
-      altText: "Stage 3",
+      altText: "Stage 7",
       heading: "Vendor management",
       description: "Track vendors and goods in one sophisticated, easy-to-use platform.",
       duration: 1200

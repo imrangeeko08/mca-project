@@ -74,18 +74,21 @@ const Navbar = () => {
                     <span className="title">Consumer</span>
                   </li>
                 </Link>
-                <li className="position-relative dropdown-item ">
-                  <div className={`arrow third-arrow d-lg-block d-none rounded-circle`}>
-                    <GoArrowRight />
-                  </div>
-                  <div className="image-container d-lg-block d-none">
-                    <img
-                      src="Image/industrial-background-768x512.jpg"
-                      alt="industrial"
-                    />
-                  </div>
-                  <span className="title">Industrial</span>
-                </li>
+                <Link href="/markets/Industrial">
+                  <li className="position-relative dropdown-item ">
+                    <div className={`arrow third-arrow d-lg-block d-none rounded-circle`}>
+                      <GoArrowRight />
+                    </div>
+                    <div className="image-container d-lg-block d-none">
+                      <img
+                        src="Image/industrial-background-768x512.jpg"
+                        alt="industrial"
+                      />
+                    </div>
+                    <span className="title">Industrial</span>
+                  </li>
+                </Link>
+
                 <li className="position-relative dropdown-item ">
                   <div className={`arrow fourth-arrow d-lg-block d-none  rounded-circle`}>
                     <GoArrowRight />
