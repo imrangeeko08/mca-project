@@ -96,7 +96,10 @@
 
 .navbar-light .navbar-brand,
 .navbar-light a.btn {
-    height: 75px !important;
+    height: 50px !important;
+    border-radius: 2px 4px;
+
+    
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -676,3 +679,143 @@
 .bg-cover {
     background-size: cover;
 }
+
+
+
+
+.contact-section {
+    background-color: #f8f9fa;
+    padding: 60px 0;
+   position: absolute !important;
+   z-index: 1000 !important;
+    .container {
+      max-width: 600px;
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+  
+    h2 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+  
+    p {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #6c757d;
+    }
+  
+    .form-group {
+      label {
+        font-weight: 500;
+        font-size: 16px;
+        margin-bottom: 5px;
+      }
+      input, select, textarea {
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+        font-size: 16px;
+        padding: 10px;
+        width: 100%;
+      }
+  
+      textarea {
+        resize: vertical;
+      }
+    }
+  
+    .btn {
+      background-color: #563d7c;
+      border-color: #563d7c;
+      &:hover {
+        background-color: #432c5c;
+      }
+    }
+  
+    .form-check-label {
+      margin-left: 5px;
+    }
+  
+    .form-check-input {
+      margin-top: 2px;
+    }
+  }
+  
+
+
+
+.contact-sections{
+  background: linear-gradient(to bottom, #00103a 0%, rgba(0, 16, 58, 0.98) 17%, rgba(0, 16, 58, 0.89) 31%, rgba(0, 16, 58, 0.81) 38%, rgba(0, 16, 58, 0.69) 45%, rgba(0, 16, 58, 0.3) 67%, rgba(0, 16, 58, 0.1) 85%, transparent 100%),
+
+    url('/Image/APLL_Header-Image-300-1920x1080.jpg'); // Correct image path
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 400px;
+  overflow: hidden !important;
+  position: relative !important;
+  z-index: -1 !important;
+  @media (min-width: 576px) {
+
+    border-bottom-right-radius: 100% 20%;
+    border-bottom-left-radius: 100% 20%;
+  }
+}
+
+.carre{
+background-image: url("https://www.apllogistics.com/wp-content/uploads/2022/12/home_hero.jpg");
+}
+.career-section {
+    .why-join, .good-environment, .internship-program {
+      padding: 50px 0;
+  
+      h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+  
+      p {
+        font-size: 1.2rem;
+      }
+      
+      img {
+        max-width: 100%;
+      }
+    }
+  
+    .testimonials {
+      .card {
+        margin-bottom: 20px;
+        text-align: center;
+  
+        .card-img-top {
+          border-radius: 50%;
+        }
+      }
+    }
+  
+    .ready-to-start {
+      background-color: #f8f9fa;
+      padding: 50px 0;
+  
+      h2 {
+        margin-bottom: 20px;
+      }
+  
+      .btn {
+        font-size: 1.2rem;
+      }
+    }
+  
+    .internship-program {
+      background-color: #ffffff;
+    }
+  }
+  

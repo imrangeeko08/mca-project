@@ -20,9 +20,9 @@ const Navbar = () => {
       <nav className="navbar navbar-expand-lg bg-white navbar-light shadow border-top border-5 border-primary top-0 sticky-top w-100  z-100 p-0">
         <a
           href="/"
-          className="navbar-brand bg-primary d-flex align-items-center px-4 px-lg-5"
+          className="navbar-brand bg-primary my-2 ms-2 d-flex align-items-center px-4 px-lg-3 "
         >
-          <h2 className="mb-2 text-white">Logistica</h2>
+          <h2 className="mb-2 fs-4 text-white">Logistica</h2>
         </a>
         <button
           type="button"
@@ -33,7 +33,7 @@ const Navbar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarCollapse">
-          <div className="navbar-nav ms-5 gap-4 p-4 p-lg-0 me-auto position-relative">
+          <div className="navbar-nav ms-3 gap-2  p-4 p-lg-0 me-auto position-relative">
             <div legacyBehavior className="dropdown nav-item  ">
               <a
                 className={`nav-item dropdown-toggle nav-link ${
@@ -176,7 +176,7 @@ const Navbar = () => {
               </a>
             </Link>
 
-            <div className="nav-item dropdown">
+            {/* <div className="nav-item dropdown">
               <a
                 href="#"
                 className="nav-link dropdown-toggle fs-2"
@@ -231,7 +231,7 @@ const Navbar = () => {
                   </a>
                 </Link>
               </div>
-            </div>
+            </div> */}
 
             <Link href="/Contact" legacyBehavior>
               <a
@@ -242,6 +242,16 @@ const Navbar = () => {
                 Contact
               </a>
             </Link>
+            <Link href="/Carrer" legacyBehavior>
+              <a
+                className={`nav-item nav-link ${
+                  isActive("/Carrer") ? "active" : ""
+                }`}
+              >
+                Carrer
+              </a>
+            </Link>
+
             <Link href="/Login" legacyBehavior>
               <button
                 className="btn btn-danger text-white h-25 mt-3 mx-2 border-0 btn-outline-dark"
@@ -252,9 +262,9 @@ const Navbar = () => {
                 Login
               </button>
             </Link>
-            <Link href="">
+            <Link className="nav-item " href="/FreeQoute">
               {" "}
-              <button className="btn btn-danger border-0 btn-outline-dark mt-3  rounded-1 p-2 text-white  w-100">
+              <button className="btn text-nowrap mt-3 btn-danger border-0 btn-outline-dark   rounded-1 p-2 text-white">
                 Get a Free Quote
               </button>
             </Link>

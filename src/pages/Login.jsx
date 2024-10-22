@@ -37,7 +37,7 @@ const Login = () => {
     };
 
     return (
-        <div className="min-vh-100 mt-5 d-flex align-items-center justify-content-center bg-gradient login-form">
+        <div className="min-vh-100  d-flex align-items-center justify-content-center bg-gradient login-form">
             {/* Background Pattern Overlay */}
             <div className="position-absolute top-0 bottom-0 start-0 end-0 bg-cover opacity-10" style={{ backgroundImage: "url('/api/placeholder/1920/1080')" }} />
 
