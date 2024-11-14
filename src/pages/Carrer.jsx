@@ -39,12 +39,12 @@ const Carrer = () => {
             </ul>
           </div>
           <div className="col-md-6">
-            <img src="/path/to/environment-image.jpg" alt="Good Environment" className="img-fluid" />
+            <img src="/Image/goodwork.jpg" alt="Good Environment" className="img-fluid" />
           </div>
         </section>
 
         {/* Team Culture Section */}
-        <section className="team-culture row my-5">
+        <section className="team-culture row my-5 align-items-center">
           <div className="col-md-6 order-md-2">
             <h3 className="display-5">Our Team Culture</h3>
             <p>
@@ -53,7 +53,7 @@ const Carrer = () => {
             </p>
           </div>
           <div className="col-md-6 order-md-1">
-            <img src="/path/to/team-culture-image.jpg" alt="Team Culture" className="img-fluid" />
+            <img src="/Image/team-culture.jpg" alt="Team Culture" className="img-fluid" />
           </div>
         </section>
 
@@ -73,13 +73,13 @@ const Carrer = () => {
             </ul>
           </div>
           <div className="col-md-6">
-            <img src="/path/to/benefits-image.jpg" alt="Employee Benefits" className="img-fluid" />
+            <img src="/Image/employee-benifit.png" alt="Employee Benefits" className="img-fluid border" />
           </div>
         </section>
 
         {/* Employee Testimonials Section */}
         <section className="employee-testimonials my-5">
-          <h3 className="text-center">What Our Employees Say</h3>
+          <h3 className="text-center my-5">What Our Employees Say</h3>
           <div className="row">
             <div className="col-md-4 text-center">
               <blockquote className="blockquote">
