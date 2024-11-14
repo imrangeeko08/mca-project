@@ -819,3 +819,9 @@ background-image: url("https://www.apllogistics.com/wp-content/uploads/2022/12/h
     }
   }
   
+
+  .faq-section .accordion-button:not(.collapsed) {
+  background-color: transparent;
+  color: inherit;
+  box-shadow: none;
+}
