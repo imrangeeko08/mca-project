@@ -2,6 +2,8 @@
 import "@/styles/globals.scss";
 import "@/styles/bootstrap.scss";
 import "@/pages/markets/market.scss";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; 
 import { useEffect } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
@@ -15,6 +17,7 @@ export default function App({ Component, pageProps }) {
     <>
       <Navbar></Navbar>
       <Component {...pageProps} />
+      <ToastContainer />
       <Footer></Footer>
     </>
   );

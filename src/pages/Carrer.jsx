@@ -23,7 +23,7 @@ const Carrer = () => {
             At XYZ Logistics, we are more than just a workplace. We are a family that fosters innovation,
             collaboration, and continuous learning. Join us to be part of a team that is redefining the future of logistics.
           </p>
-          <img src="/path/to/why-join-us-image.jpg" alt="Why Join Us" className="img-fluid" />
+          <img src="/Image/why-join-us.jpg" alt="Why Join Us"  className="img-fluid w-100"  />
         </section>
 
         {/* Good Working Environment Section */}
@@ -39,12 +39,12 @@ const Carrer = () => {
             </ul>
           </div>
           <div className="col-md-6">
-            <img src="/path/to/environment-image.jpg" alt="Good Environment" className="img-fluid" />
+            <img src="/Image/goodwork.jpg" alt="Good Environment" className="img-fluid" />
           </div>
         </section>
 
         {/* Team Culture Section */}
-        <section className="team-culture row my-5">
+        <section className="team-culture row my-5 align-items-center">
           <div className="col-md-6 order-md-2">
             <h3 className="display-5">Our Team Culture</h3>
             <p>
@@ -53,7 +53,7 @@ const Carrer = () => {
             </p>
           </div>
           <div className="col-md-6 order-md-1">
-            <img src="/path/to/team-culture-image.jpg" alt="Team Culture" className="img-fluid" />
+            <img src="/Image/team-culture.jpg" alt="Team Culture" className="img-fluid" />
           </div>
         </section>
 
@@ -73,27 +73,27 @@ const Carrer = () => {
             </ul>
           </div>
           <div className="col-md-6">
-            <img src="/path/to/benefits-image.jpg" alt="Employee Benefits" className="img-fluid" />
+            <img src="/Image/employee-benifit.png" alt="Employee Benefits" className="img-fluid border" />
           </div>
         </section>
 
         {/* Employee Testimonials Section */}
         <section className="employee-testimonials my-5">
-          <h3 className="text-center">What Our Employees Say</h3>
-          <div className="row">
-            <div className="col-md-4 text-center">
-              <blockquote className="blockquote">
+          <h3 className="text-center my-5">What Our Employees Say</h3>
+          <div className="row justify-content-around">
+            <div className="col-md-3 text-center  rounded px-3 py-3 shadow ">
+              <blockquote className="blockquote  ">
                 <p>"Working here has been a transformative experience. The company values and encourages personal growth."</p>
                 <footer className="blockquote-footer">Jane Doe</footer>
               </blockquote>
             </div>
-            <div className="col-md-4 text-center">
-              <blockquote className="blockquote">
+            <div className="col-md-3 text-center rounded px-3 py-3 shadow">
+              <blockquote className="blockquote  ">
                 <p>"The team culture here is amazing. Everyone is encouraged to contribute and grow."</p>
                 <footer className="blockquote-footer">John Smith</footer>
               </blockquote>
             </div>
-            <div className="col-md-4 text-center">
+            <div className="col-md-3 text-center  rounded px-3 py-3 shadow">
               <blockquote className="blockquote">
                 <p>"XYZ Logistics offers endless opportunities for development and learning."</p>
                 <footer className="blockquote-footer">Emily Johnson</footer>
@@ -103,7 +103,7 @@ const Carrer = () => {
         </section>
 
         {/* Internship Program Section */}
-        <section className="internship-program row my-5">
+        <section className="internship-program row my-5 align-items-center">
           <div className="col-md-6">
             <h3 className="display-5">Our Internship Program</h3>
             <p>
@@ -112,7 +112,7 @@ const Carrer = () => {
             </p>
           </div>
           <div className="col-md-6">
-            <img src="/path/to/internship-image.jpg" alt="Internship Program" className="img-fluid" />
+            <img src="/Image/internship.jpeg" alt="Internship Program" className="img-fluid" />
           </div>
         </section>
 
@@ -195,24 +195,145 @@ const Carrer = () => {
 
         {/* FAQ Section */}
         <section className="faq-section my-5">
-          <h3 className="text-center">Frequently Asked Questions</h3>
-          <div className="row">
-            <div className="col-md-6">
-              <h5>How can I apply for a job?</h5>
-              <p>
-                You can apply by clicking on the "Apply Now" button above, which will guide you through
-                the application process.
-              </p>
-            </div>
-            <div className="col-md-6">
-              <h5>What are the benefits of working with XYZ Logistics?</h5>
-              <p>
-                We offer competitive salaries, excellent benefits, and a dynamic working environment
-                that supports your growth.
-              </p>
+  <h3 className="text-center mb-4">Frequently Asked Questions</h3>
+  <div className="row justify-content-center">
+    <div className="col-md-8">
+      <div className="accordion" id="faqAccordion">
+        
+        {/* Question 1 */}
+        <div className="accordion-item border-bottom">
+          <h5 className="accordion-header" id="headingOne">
+            <button
+              className="accordion-button collapsed text-dark"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseOne"
+              aria-expanded="false"
+              aria-controls="collapseOne"
+            >
+              How can I apply for a job?
+            </button>
+          </h5>
+          <div
+            id="collapseOne"
+            className="accordion-collapse collapse"
+            aria-labelledby="headingOne"
+            data-bs-parent="#faqAccordion"
+          >
+            <div className="accordion-body">
+              You can apply by clicking on the "Apply Now" button above, which will guide you through the application process.
             </div>
           </div>
-        </section>
+        </div>
+
+        {/* Question 2 */}
+        <div className="accordion-item border-bottom">
+          <h5 className="accordion-header" id="headingTwo">
+            <button
+              className="accordion-button collapsed text-dark"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo"
+              aria-expanded="false"
+              aria-controls="collapseTwo"
+            >
+              What are the benefits of working with APL Logistics?
+            </button>
+          </h5>
+          <div
+            id="collapseTwo"
+            className="accordion-collapse collapse"
+            aria-labelledby="headingTwo"
+            data-bs-parent="#faqAccordion"
+          >
+            <div className="accordion-body">
+              We offer competitive salaries, excellent benefits, and a dynamic working environment that supports your growth.
+            </div>
+          </div>
+        </div>
+
+        {/* Question 3 */}
+        <div className="accordion-item border-bottom">
+          <h5 className="accordion-header" id="headingThree">
+            <button
+              className="accordion-button collapsed text-dark"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseThree"
+              aria-expanded="false"
+              aria-controls="collapseThree"
+            >
+              Are there opportunities for career advancement?
+            </button>
+          </h5>
+          <div
+            id="collapseThree"
+            className="accordion-collapse collapse"
+            aria-labelledby="headingThree"
+            data-bs-parent="#faqAccordion"
+          >
+            <div className="accordion-body">
+              Yes, we believe in promoting from within and offer regular training programs to help our team members grow their skills and advance in their careers.
+            </div>
+          </div>
+        </div>
+
+        {/* Question 4 */}
+        <div className="accordion-item border-bottom">
+          <h5 className="accordion-header" id="headingFour">
+            <button
+              className="accordion-button collapsed text-dark"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseFour"
+              aria-expanded="false"
+              aria-controls="collapseFour"
+            >
+              What is the company's policy on work-life balance?
+            </button>
+          </h5>
+          <div
+            id="collapseFour"
+            className="accordion-collapse collapse"
+            aria-labelledby="headingFour"
+            data-bs-parent="#faqAccordion"
+          >
+            <div className="accordion-body">
+              APL Logistics values work-life balance and offers flexible work schedules where possible. We believe that a balanced life is key to job satisfaction and productivity.
+            </div>
+          </div>
+        </div>
+
+        {/* Question 5 */}
+        <div className="accordion-item border-bottom">
+          <h5 className="accordion-header" id="headingFive">
+            <button
+              className="accordion-button collapsed text-dark"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseFive"
+              aria-expanded="false"
+              aria-controls="collapseFive"
+            >
+              What are the training programs available for new employees?
+            </button>
+          </h5>
+          <div
+            id="collapseFive"
+            className="accordion-collapse collapse"
+            aria-labelledby="headingFive"
+            data-bs-parent="#faqAccordion"
+          >
+            <div className="accordion-body">
+              New employees receive an onboarding training to familiarize them with our systems and processes. We also offer specialized training to enhance job-specific skills and knowledge.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
       </div>
     </div>
   );
