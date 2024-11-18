@@ -1,17 +1,17 @@
 "use client";
 import React from "react";
 import { useRouter } from "next/router";
-import { useState , useEffect } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { FaChevronDown } from "react-icons/fa";
 import { GoArrowRight } from "react-icons/go";
 import Image from "next/image";
 import Logo from '../../public/Image/Logo.jpeg'
-const Navbar = ({isUserLoggedIn}) => {
+const Navbar = ({ isUserLoggedIn }) => {
   const router = useRouter();
   const isActive = path => router.pathname === path;
   // console.log("check:",isUserLoggedIn)
-  const [isLoggedIn, setIsLoggedIn] = useState(isUserLoggedIn ); // Set initial state based on prop
+  const [isLoggedIn, setIsLoggedIn] = useState(isUserLoggedIn); // Set initial state based on prop
   // Handle login status changes
   useEffect(() => {
     setIsLoggedIn(isUserLoggedIn); // Update local state when the prop changes
@@ -31,7 +31,7 @@ const Navbar = ({isUserLoggedIn}) => {
           href="/"
           className="mx-3 py-1"
         >
-        <img src="/Image/Logo.png" alt="Why Join Us"  className="img-fluid" width={100} height={10}  />
+          <img src="/Image/Logo.png" alt="Why Join Us" className="img-fluid" width={100} height={10} />
         </a>
 
         <button
@@ -46,9 +46,8 @@ const Navbar = ({isUserLoggedIn}) => {
           <div className="navbar-nav ms-3 gap-2  p-4 p-lg-0 me-auto position-relative">
             <div legacyBehavior className="dropdown nav-item  ">
               <a
-                className={`nav-item dropdown-toggle nav-link ${
-                  isActive("/") ? "active" : ""
-                }`}
+                className={`nav-item dropdown-toggle nav-link ${isActive("/") ? "active" : ""
+                  }`}
               >
                 MARKETS <FaChevronDown className={`ms-1`} />
                 {/* Submenu */}
@@ -136,36 +135,32 @@ const Navbar = ({isUserLoggedIn}) => {
               <div className="dropdown-menu fade-up m-0">
                 <Link href="/About" legacyBehavior>
                   <a
-                    className={`dropdown-item ${
-                      isActive("/price") ? "active" : ""
-                    }`}
+                    className={`dropdown-item ${isActive("/price") ? "active" : ""
+                      }`}
                   >
                     Company overviwe
                   </a>
                 </Link>
                 <Link href="/ManagmentTeams" legacyBehavior>
                   <a
-                    className={`dropdown-item ${
-                      isActive("/features") ? "active" : ""
-                    }`}
+                    className={`dropdown-item ${isActive("/features") ? "active" : ""
+                      }`}
                   >
                     Managment Teams
                   </a>
                 </Link>
                 <Link href="/BusinessTerms" legacyBehavior>
                   <a
-                    className={`dropdown-item ${
-                      isActive("/quote") ? "active" : ""
-                    }`}
+                    className={`dropdown-item ${isActive("/quote") ? "active" : ""
+                      }`}
                   >
                     Business Terms
                   </a>
                 </Link>
                 <Link href="/CodeOfCunduct" legacyBehavior>
                   <a
-                    className={`dropdown-item ${
-                      isActive("/team") ? "active" : ""
-                    }`}
+                    className={`dropdown-item ${isActive("/team") ? "active" : ""
+                      }`}
                   >
                     Codes of Conduct
                   </a>
@@ -174,54 +169,51 @@ const Navbar = ({isUserLoggedIn}) => {
             </div>
             <Link href="/Services" legacyBehavior>
               <a
-                className={`nav-item nav-link ${
-                  isActive("/Services") ? "active" : ""
-                }`}
+                className={`nav-item nav-link ${isActive("/Services") ? "active" : ""
+                  }`}
               >
-                Services 
+                Services
               </a>
             </Link>
 
-           
+
 
             <Link href="/Contact" legacyBehavior>
               <a
-                className={`nav-item nav-link ${
-                  isActive("/Contact") ? "active" : ""
-                }`}
+                className={`nav-item nav-link ${isActive("/Contact") ? "active" : ""
+                  }`}
               >
                 Contact
               </a>
             </Link>
             <Link href="/Carrer" legacyBehavior>
               <a
-                className={`nav-item nav-link ${
-                  isActive("/Carrer") ? "active" : ""
-                }`}
+                className={`nav-item nav-link ${isActive("/Carrer") ? "active" : ""
+                  }`}
               >
                 Carrer
               </a>
             </Link>
 
-          {isUserLoggedIn? (
-                            <button
-                                className="btn btn-danger text-white h-25 mt-3 mx-2 border-0 btn-outline-dark"
-                                style={{ padding: "8px 16px", borderRadius: "5px" }}
-                                onClick={handleLogout}
-                            >
-                                Logout
-                            </button>
-                        ) : (
-                            <Link href="/Login" legacyBehavior>
-                                <button
-                                    className="btn btn-danger text-white h-25 mt-3 mx-2 border-0 btn-outline-dark"
-                                    style={{ padding: "8px 16px", borderRadius: "5px" }}
-                                >
-                                    Login
-                                </button>
-                            </Link>
-                        )}
-          { isUserLoggedIn && <Link className="nav-item " href="/FreeQoute">
+            {isUserLoggedIn ? (
+              <button
+                className="btn btn-danger text-white h-25 mt-3 mx-2 border-0 btn-outline-dark"
+                style={{ padding: "8px 16px", borderRadius: "5px" }}
+                onClick={handleLogout}
+              >
+                Logout
+              </button>
+            ) : (
+              <Link href="/Login" legacyBehavior>
+                <button
+                  className="btn btn-danger text-white h-25 mt-3 mx-2 border-0 btn-outline-dark"
+                  style={{ padding: "8px 16px", borderRadius: "5px" }}
+                >
+                  Login
+                </button>
+              </Link>
+            )}
+            {isUserLoggedIn && <Link className="nav-item " href="/FreeQoute">
               {" "}
               <button className="btn text-nowrap mt-3 btn-danger border-0 btn-outline-dark   rounded-1 p-2 text-white">
                 Get a Free Quote
@@ -231,7 +223,7 @@ const Navbar = ({isUserLoggedIn}) => {
         </div>
       </nav>
 
-     
+
     </div>
   );
 };
