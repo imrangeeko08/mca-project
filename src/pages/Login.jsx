@@ -43,7 +43,7 @@ const Login = () => {
 
                 if (response.ok) {
                     localStorage.setItem('isLoggedIn', 'true');
-                    router.push('/Home');
+                    router.push('/');
                     // Success message in toast
                     toast.success('Login successful!');
                 } else {

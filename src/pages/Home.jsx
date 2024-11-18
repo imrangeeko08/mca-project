@@ -15,9 +15,6 @@ import { FaStar } from "react-icons/fa";
 import { FaCheck, FaArrowRight } from "react-icons/fa";
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 
-import { Pagination, Autoplay } from 'swiper/modules';
-
-import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -25,20 +22,33 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import { FaQuoteRight } from 'react-icons/fa';
+import { useRouter } from "next/router";
 export default function Home() {
 
   useEffect(() => {
     AOS.init({ duration: 1000 }); // Initialize AOS with a duration of 1000ms
   }, []);
 
+  const [showPopup, setShowPopup] = useState(false);
+  const router = useRouter();
+  const handleFreeQuoteClick = () => {
+    // Check if the user is logged in by checking localStorage
+    const isLoggedIn = localStorage.getItem('isLoggedIn'); // Modify this key according to your app's login status.
+
+    if (isLoggedIn) {
+      // Redirect to the Free Quote page if logged in
+      router.push('/FreeQoute');
+    } else {
+      // Show a popup if not logged in
+      setShowPopup(true);
+    }
+  };
+
+  const closePopup = () => {
+    setShowPopup(false);
+  };
 
 
-  const testimonials = [
-    { img: '/Image/testimonial-1.jpg', name: 'Client Name 1', profession: 'Profession 1', text: 'my name is imran khan i want to say that this is the best  service provider company in all over the wolrd ' },
-    { img: '/Image/testimonial-2.jpg', name: 'Client Name 2', profession: 'Profession 2', text: 'Testimonial text 2' },
-    { img: '/Image/testimonial-3.jpg', name: 'Client Name 3', profession: 'Profession 3', text: 'Testimonial text 3' },
-    { img: '/Image/testimonial-4.jpg', name: 'Client Name 4', profession: 'Profession 4', text: 'Testimonial text 4' },
-  ];
   const [activeIndex, setActiveIndex] = useState(0);
   return (
     <main className={` ${inter.className}`}>
@@ -101,13 +111,34 @@ export default function Home() {
                         Read More
                       </a>
                       <a
-                        href=""
-                        className="btn btn-secondary py-2 px-3 py-md-3 px-md-5 animated"
-                        data-aos="fade-right"
-                        data-aos-delay="1000"
-                      >
-                        Free Quote
-                      </a>
+        href="#"
+        className="btn btn-secondary py-2 px-3 py-md-3 px-md-5 animated"
+        data-aos="fade-right"
+        data-aos-delay="1000"
+        onClick={handleFreeQuoteClick}
+      >
+        Free Quote
+      </a>
+
+      {showPopup && (
+        <div className="modal fade show" style={{ display: 'block' }} tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div className="modal-dialog">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title" id="exampleModalLabel">Login Required</h5>
+                <button type="button" className="btn-close" onClick={closePopup}></button>
+              </div>
+              <div className="modal-body">
+                You need to log in to access the Free Quote page.
+              </div>
+              <div className="modal-footer">
+                <button type="button" className="btn btn-secondary" onClick={closePopup}>Close</button>
+                <button type="button" className="btn btn-primary" onClick={() => router.push('/Login')}>Login</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
                     </div>
                   </div>
                 </div>
@@ -165,10 +196,12 @@ export default function Home() {
                         Read More
                       </a>
                       <a
-                        href=""
+                        href="/FreeQoute"
                         className="btn btn-secondary py-2 px-3 py-md-3 px-md-5 animated"
                         data-aos="fade-right"
                         data-aos-delay="1000"
+                        onClick={handleFreeQuoteClick}
+
                       >
                         Free Quote
                       </a>
@@ -647,7 +680,71 @@ export default function Home() {
       </div>
       {/* <!-- Quote End --> */}
 
-  
+      {/* <!-- Testimonial End --> */}
+
+      {/* <div className="container-xxl py-5">
+        <div className="container">
+          <div className="text-center mb-5">
+            <h6 className="text-secondary text-uppercase">Testimonial</h6>
+            <h1 className="mb-0">Our Clients Say!</h1>
+          </div>
+          <Swiper
+            modules={[Pagination, Autoplay]}
+            pagination={{ clickable: true }}
+            autoplay={{ delay: 3000 }}
+            loop={true}
+            centeredSlides={true}
+            breakpoints={{
+              // Responsive breakpoints
+              320: {  // Small screens
+                slidesPerView: 1,
+                spaceBetween: 10,
+              },
+              768: {  // Tablets
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              1024: {  // Larger screens
+                slidesPerView: 3,
+                spaceBetween: 30,
+              },
+            }}
+            onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)} // Track active slide
+          >
+            {testimonials.map((testimonial, index) => (
+              <SwiperSlide key={index}>
+                <div
+                  className={`testimonial-item mb-5 p-4 ${activeIndex === index ? 'active-slide' : ''}`}
+                  style={{
+                    transition: 'all 0.3s ease',
+                    transform: activeIndex === index ? 'scale(1.05)' : 'scale(1)',
+                    filter: activeIndex === index ? 'card' : 'none',
+                    opacity: activeIndex === index ? 1 : 0.5,
+                    border: activeIndex === index ? '3px solid white' : 'none', // Highlight active slide
+                    borderRadius: '10px',
+                  }}
+                >
+                  <i>
+                    <FaQuoteRight className="text-light position-absolute top-0 end-0 mt-n3 me-4" size="1em" />
+                  </i>
+                  <div className="d-flex align-items-end mb-4">
+                    <img
+                      className="img-fluid flex-shrink-0 rounded-circle"
+                      src={testimonial.img}
+                      style={{ width: "80px", height: "80px" }}
+                    />
+                    <div className="ms-4">
+                      <h5 className="mb-1">{testimonial.name}</h5>
+                      <p className="m-0">{testimonial.profession}</p>
+                    </div>
+                  </div>
+                  <p className="mb-0">{testimonial.text}</p>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </div> */}
       
       {/* <!-- Testimonial End --> */}
     </main>

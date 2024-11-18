@@ -1,10 +1,61 @@
 import React, { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
+import { toast } from "react-toastify";
 
 const Carrer = () => {
   const [showModal, setShowModal] = useState(false);
-
   const handleModal = () => setShowModal(!showModal);
+
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    coverLetter: '',
+  });
+
+  const [status, setStatus] = useState('');
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch('/api/career', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        setStatus('Application submitted successfully!');
+        toast.success(data.message)
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          coverLetter: '',
+        });
+      } else {
+        setStatus(data.message || 'Failed to submit the application');
+        toast.error(data.message)
+      }
+    } catch (error) {
+      console.error('Error submitting application:', error);
+      setStatus('Error submitting the application');
+    }
+  };
+
+
 
   return (
     <div className="career">
@@ -131,65 +182,64 @@ const Carrer = () => {
             <Modal.Title>Job Application Form</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <form>
-              {/* Name Field */}
+            <form onSubmit={handleSubmit}>
               <div className="form-group">
                 <label htmlFor="name">Name</label>
                 <input
                   type="text"
                   className="form-control"
                   id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
                   placeholder="Enter your name"
                   required
                 />
               </div>
-
-              {/* Email Field */}
               <div className="form-group">
                 <label htmlFor="email">Email</label>
                 <input
                   type="email"
                   className="form-control"
                   id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   placeholder="Enter your email"
                   required
                 />
               </div>
-
-              {/* Phone Number Field */}
               <div className="form-group">
                 <label htmlFor="phone">Phone Number</label>
                 <input
                   type="tel"
                   className="form-control"
                   id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
                   placeholder="Enter your phone number"
                   required
                 />
               </div>
-
-              {/* Resume Upload Field */}
-              <div className="form-group">
-                <label htmlFor="resume">Upload Resume</label>
-                <input type="file" className="form-control-file" id="resume" required />
-              </div>
-
-              {/* Cover Letter Field */}
               <div className="form-group">
                 <label htmlFor="coverLetter">Cover Letter</label>
                 <textarea
                   className="form-control"
                   id="coverLetter"
+                  name="coverLetter"
                   rows="3"
+                  value={formData.coverLetter}
+                  onChange={handleChange}
                   placeholder="Why do you want to work with us?"
                   required
                 ></textarea>
               </div>
-
               <button type="submit" className="btn btn-primary">
                 Submit Application
               </button>
             </form>
+            {status && <p>{status}</p>}
           </Modal.Body>
         </Modal>
 

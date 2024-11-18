@@ -825,3 +825,216 @@ background-image: url("https://www.apllogistics.com/wp-content/uploads/2022/12/h
   color: inherit;
   box-shadow: none;
 }
+
+.code-of-conduct {
+    // Hero Section
+    .hero-section {
+      background: linear-gradient(to right, #0d6efd, #6610f2);
+      color: white;
+      padding: 5rem 0;
+  
+      h1 {
+        font-size: 3rem;
+        animation: fadeIn 1.5s ease-in-out;
+      }
+  
+      p {
+        font-size: 1.2rem;
+        animation: fadeIn 2s ease-in-out;
+      }
+    }
+  
+    // Overview Section
+    .overview-section {
+      background: #f8f9fa;
+  
+      p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 1rem;
+      }
+    }
+  
+    // Core Values Section
+    .values-section {
+      background: #071524;
+      padding: 4rem 0;
+  
+      .value-box {
+        background: #47627c;
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        text-align: center;
+        transition: transform 0.3s ease;
+  
+        h4 {
+          font-size: 1.5rem;
+          margin-bottom: 1rem;
+        }
+  
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+  
+    // Ethical Standards Section
+    .ethical-standards-section {
+      ul {
+        list-style-type: disc;
+        margin-left: 2rem;
+  
+        li {
+          font-size: 1.1rem;
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
+  
+    // Call to Action Section
+    .cta-section {
+      background: linear-gradient(to right, #6610f2, #0d6efd);
+      padding: 4rem 0;
+  
+      h2 {
+        margin-bottom: 1rem;
+      }
+  
+      .animate-btn {
+        padding: 0.75rem 2rem;
+        font-size: 1.2rem;
+        animation: pulse 1.5s infinite;
+      }
+    }
+  
+    // Animations
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+    }
+  }
+  
+
+//business csss
+  .business-terms {
+    // Header Section
+    .header-section {
+      background: linear-gradient(to right, #007bff, #6610f2);
+      color: white;
+      padding: 5rem 0;
+  
+      h1 {
+        font-size: 3rem;
+        font-weight: bold;
+      }
+  
+      p {
+        font-size: 1.2rem;
+        margin-top: 1rem;
+      }
+    }
+  
+    // Terms Section
+    .terms-section {
+      background: #f8f9fa;
+  
+      h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        color: #343a40;
+      }
+  
+      p {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+        line-height: 1.8;
+      }
+  
+      ul {
+        list-style-type: disc;
+        margin-left: 2rem;
+        margin-bottom: 1.5rem;
+  
+        li {
+          font-size: 1rem;
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
+  
+    // Footer Section
+    .footer-section {
+      background: #343a40;
+      color: white;
+      padding: 1rem 0;
+  
+      p {
+        margin: 0;
+        font-size: 1rem;
+      }
+    }
+  }
+  
+
+
+  /* Gradient Background for the section */
+
+.custome-bg{
+  background: linear-gradient(135deg, #0066cc, #00b3b3); /* A modern blue to teal gradient */
+
+}
+/* Ensure all boxes have equal height */
+.custom-box {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Smooth transition for box content */
+.custom-box h5 {
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Animation on hover to make the box more interactive */
+.custom-box:hover h5 {
+  transform: translateY(-5px); /* Gives a slight upward movement on hover */
+}
+
+/* Adding fade-in effect on boxes */
+.wow.fadeInUp {
+  opacity: 0;
+  animation: fadeInUp 1s forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Adjust the button style */
+.btn-danger {
+  background-color: #e63946;
+  border: none;
+}
+
+.btn-danger:hover {
+  background-color: #d32f2f;
+}

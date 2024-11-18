@@ -5,38 +5,35 @@ import { useState , useEffect } from "react";
 import Link from "next/link";
 import { FaChevronDown } from "react-icons/fa";
 import { GoArrowRight } from "react-icons/go";
-
-const Navbar = () => {
+import Image from "next/image";
+import Logo from '../../public/Image/Logo.jpeg'
+const Navbar = ({isUserLoggedIn}) => {
   const router = useRouter();
-    const isActive = path => router.pathname === path;
-    const [isLoggedIn, setIsLoggedIn] = useState(false); // Track login status
+  const isActive = path => router.pathname === path;
+  // console.log("check:",isUserLoggedIn)
+  const [isLoggedIn, setIsLoggedIn] = useState(isUserLoggedIn ); // Set initial state based on prop
+  // Handle login status changes
+  useEffect(() => {
+    setIsLoggedIn(isUserLoggedIn); // Update local state when the prop changes
+  }, [isUserLoggedIn]); // Re-run this effect when the prop changes
 
-    // Check login status on component mount
- useEffect(() => {
-    const loginStatus = localStorage.getItem("isLoggedIn");
-    if (loginStatus === "true") {
-      setIsLoggedIn(true);
-    } else {
-      setIsLoggedIn(false);  // Ensure false if not logged in
-    }
-  }, []); // Empty dependency array means it runs once on mount
-
-    // Handle Logout
-    const handleLogout = () => {
-        localStorage.removeItem('isLoggedIn');
-        setIsLoggedIn(false);
-        router.push('/Login');
-    };
+  // Handle logout
+  const handleLogout = () => {
+    localStorage.removeItem('isLoggedIn');
+    setIsLoggedIn(false); // Update state to false
+    router.push('/Login'); // Navigate to login page
+  };
 
   return (
     <div>
       <nav className="navbar navbar-expand-lg bg-white navbar-light shadow border-top border-5 border-primary top-0 sticky-top w-100  z-100 p-0">
         <a
           href="/"
-          className="navbar-brand bg-primary my-2 ms-2 d-flex align-items-center px-4 px-lg-3 "
+          className="mx-3 py-1"
         >
-          <h2 className="mb-2 fs-4 text-white">Logistica</h2>
+        <img src="/Image/Logo.png" alt="Why Join Us"  className="img-fluid" width={100} height={10}  />
         </a>
+
         <button
           type="button"
           className="navbar-toggler me-4"
@@ -164,7 +161,7 @@ const Navbar = () => {
                     Business Terms
                   </a>
                 </Link>
-                <Link href="/CodesOfConduct" legacyBehavior>
+                <Link href="/CodeOfCunduct" legacyBehavior>
                   <a
                     className={`dropdown-item ${
                       isActive("/team") ? "active" : ""
@@ -181,7 +178,7 @@ const Navbar = () => {
                   isActive("/Services") ? "active" : ""
                 }`}
               >
-                Services <FaChevronDown className={`ms-1`} />
+                Services 
               </a>
             </Link>
 
@@ -206,7 +203,7 @@ const Navbar = () => {
               </a>
             </Link>
 
-          {isLoggedIn ? (
+          {isUserLoggedIn? (
                             <button
                                 className="btn btn-danger text-white h-25 mt-3 mx-2 border-0 btn-outline-dark"
                                 style={{ padding: "8px 16px", borderRadius: "5px" }}
@@ -224,12 +221,12 @@ const Navbar = () => {
                                 </button>
                             </Link>
                         )}
-            <Link className="nav-item " href="/FreeQoute">
+          { isUserLoggedIn && <Link className="nav-item " href="/FreeQoute">
               {" "}
               <button className="btn text-nowrap mt-3 btn-danger border-0 btn-outline-dark   rounded-1 p-2 text-white">
                 Get a Free Quote
               </button>
-            </Link>
+            </Link>}
           </div>
         </div>
       </nav>
