@@ -40,27 +40,26 @@ const Login = () => {
                     },
                     body: JSON.stringify(formData),
                 });
-
+    
+                const data = await response.json(); // Parse the response JSON
+    
                 if (response.ok) {
-                    localStorage.setItem('isLoggedIn', 'true');
-                    router.push('/');
-                    // Success message in toast
-                    toast.success('Login successful!');
+                    localStorage.setItem('isLoggedIn', 'true'); // Save logged-in state
+                    localStorage.setItem('user', JSON.stringify(data.user)); // Save user details
+                    router.push('/'); // Redirect to the homepage or dashboard
+                    toast.success('Login successful!'); // Display success toast
                 } else {
-                    const errorData = await response.json();
-                    setErrorMessage(errorData.message);
-                    setErrors({ ...errors, form: errorData.message });
-                    // Error message in toast
-                    toast.error(`Login failed: ${errorData.message}`);
+                    setErrorMessage(data.message); // Display error from server
+                    setErrors({ ...errors, form: data.message });
+                    toast.error(`Login failed: ${data.message}`); // Display error toast
                 }
             } catch (error) {
                 console.error('Error logging in:', error);
-                // Error message in toast for network errors
-                toast.error('An error occurred while logging in');
+                toast.error('An error occurred while logging in'); // Handle network errors
             }
         }
     };
-
+    
     return (
         <div className="min-vh-100 d-flex align-items-center justify-content-center bg-gradient login-form">
             {/* Background Pattern Overlay */}

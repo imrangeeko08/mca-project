@@ -16,10 +16,11 @@ export default async function handler(req, res) {
       destinationCargo,
       inquiries,
       source,
+      service
     } = req.body;
 
     // Validations
-    if (!firstName || !emailAddress || !source) {
+    if (!firstName || !emailAddress || !source ||!service) {
       return res.status(400).json({ error: 'Required fields are missing' });
     }
 
@@ -41,6 +42,7 @@ export default async function handler(req, res) {
         destinationCargo,
         inquiries,
         source,
+        service,
         createdAt: new Date(),
       });
 

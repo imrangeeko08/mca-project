@@ -1,6 +1,36 @@
 import React from 'react'
+import { toast } from 'react-toastify';
 
 const Contact = () => {
+
+    async function handleSubmit(e) {
+        e.preventDefault();
+        const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+            },
+            body: JSON.stringify({
+                access_key: "e266f543-e98e-434e-b973-5f160585bf0c",
+                name: e.target.name.value,
+                email: e.target.email.value,
+                subject:e.target.subject.value,
+                message: e.target.message.value,
+            }),
+        });
+        const result = await response.json();
+        if (result.success) {
+            console.log(result);
+             e.target.name.value="",
+             e.target.email.value="",
+             e.target.subject.value="",
+             e.target.message.value="",
+             toast.success(result.message)
+        }else{
+            toast.error("form not submitated")
+        }
+    }
   return (
     <div>
        {/* <!-- Page Header Start --> */}
@@ -27,29 +57,29 @@ const Contact = () => {
                     <h6 class="text-secondary text-uppercase">Get In Touch</h6>
                     <h1 class="mb-4">Contact For Any Query</h1>
                     <div class="bg-light p-4">
-                        <form>
+                        <form onSubmit={handleSubmit}>
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" placeholder="Your Name"/>
+                                        <input type="text" class="form-control" name="name" id="name" placeholder="Your Name"/>
                                         <label for="name">Your Name</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="email" class="form-control" id="email" placeholder="Your Email"/>
+                                        <input type="email" name="email" class="form-control" id="email" placeholder="Your Email"/>
                                         <label for="email">Your Email</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="subject" placeholder="Subject"/>
+                                        <input type="text" name='subject' class="form-control" id="subject" placeholder="Subject"/>
                                         <label for="subject">Subject</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <textarea class="form-control" placeholder="Leave a message here" id="message" style={{height: "100px"}}></textarea>
+                                        <textarea class="form-control" name='message' placeholder="Leave a message here" id="message" style={{height: "100px"}}></textarea>
                                         <label for="message">Message</label>
                                     </div>
                                 </div>

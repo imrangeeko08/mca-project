@@ -21,15 +21,17 @@ export default async function handler(req, res) {
       // Hash the password before storing
       const hashedPassword = hashPassword(password);
 
-      // Insert the new user with the hashed password
+      // Normalize the email and set the default role
       const normalizedEmail = email.toLowerCase();
-      await db
-        .collection("users")
-        .insertOne({
-          fullName,
-          email: normalizedEmail,
-          password: hashedPassword,
-        });
+      const defaultRole = "user";
+
+      // Insert the new user with the hashed password and default role
+      await db.collection("users").insertOne({
+        fullName,
+        email: normalizedEmail,
+        password: hashedPassword,
+        role: defaultRole, // Default role is "user"
+      });
 
       res.status(201).json({ message: "User created successfully" });
     } catch (error) {

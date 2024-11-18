@@ -221,12 +221,23 @@ const Navbar = ({isUserLoggedIn}) => {
                                 </button>
                             </Link>
                         )}
-          { isUserLoggedIn && <Link className="nav-item " href="/FreeQoute">
-              {" "}
-              <button className="btn text-nowrap mt-3 btn-danger border-0 btn-outline-dark   rounded-1 p-2 text-white">
-                Get a Free Quote
-              </button>
-            </Link>}
+       {isUserLoggedIn && (
+  <>
+    {localStorage.getItem("user") && JSON.parse(localStorage.getItem("user")).role === "admin" ? (
+      <Link className="nav-item" href="/admin/Dashboard">
+        <button className="btn text-nowrap mt-3 btn-danger border-0 btn-outline-dark rounded-1 p-2 text-white">
+          Dashboard
+        </button>
+      </Link>
+    ) : (
+      <Link className="nav-item" href="/FreeQoute">
+        <button className="btn text-nowrap mt-3 btn-danger border-0 btn-outline-dark rounded-1 p-2 text-white">
+          Get a Free Quote
+        </button>
+      </Link>
+    )}
+  </>
+)}
           </div>
         </div>
       </nav>
