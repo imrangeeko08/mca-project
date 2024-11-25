@@ -27,12 +27,12 @@ const Navbar = ({ isUserLoggedIn }) => {
   return (
     <div>
       <nav className="navbar navbar-expand-lg bg-white navbar-light shadow border-top border-5 border-primary top-0 sticky-top w-100  z-100 p-0">
-        <a
+        <Link
           href="/"
           className="mx-3 py-1"
         >
           <img src="/Image/Logo.png" alt="Why Join Us" className="img-fluid" width={100} height={10} />
-        </a>
+        </Link>
 
         <button
           type="button"
@@ -45,13 +45,14 @@ const Navbar = ({ isUserLoggedIn }) => {
         <div className="collapse navbar-collapse" id="navbarCollapse">
           <div className="navbar-nav ms-3 gap-2  p-4 p-lg-0 me-auto position-relative">
             <div legacyBehavior className="dropdown nav-item  ">
-              <a
-                className={`nav-item dropdown-toggle nav-link ${isActive("/") ? "active" : ""
+              <Link
+                href="/"
+                className={`dropdown-toggle nav-link ${isActive("/") ? "active" : ""
                   }`}
               >
                 MARKETS <FaChevronDown className={`ms-1`} />
-                {/* Submenu */}
-              </a>
+
+              </Link>
               <ul className="submenu d-flex list-unstyled dropdown-menu   fade-up m-0">
                 <Link href="/markets/Automative">
                   <li className="position-relative dropdown-item ">
@@ -125,111 +126,118 @@ const Navbar = ({ isUserLoggedIn }) => {
             </div>
 
             <div className="nav-item dropdown">
-              <a
-                href=""
+              <Link
+                href="/"
                 className="nav-link dropdown-toggle fs-2"
                 data-bs-toggle="dropdown"
               >
                 About US <FaChevronDown className={`ms-1`} />
-              </a>
+              </Link>
               <div className="dropdown-menu fade-up m-0">
                 <Link href="/About" legacyBehavior>
-                  <a
+                  <Link
+                    href="/About"
                     className={`dropdown-item ${isActive("/price") ? "active" : ""
                       }`}
                   >
                     Company overviwe
-                  </a>
+                  </Link>
                 </Link>
                 <Link href="/ManagmentTeams" legacyBehavior>
-                  <a
+                  <Link
+                    href="/ManagmentTeams"
                     className={`dropdown-item ${isActive("/features") ? "active" : ""
                       }`}
                   >
                     Managment Teams
-                  </a>
+                  </Link>
                 </Link>
                 <Link href="/BusinessTerms" legacyBehavior>
-                  <a
+                  <Link
+                    href="/BusinessTerms"
                     className={`dropdown-item ${isActive("/quote") ? "active" : ""
                       }`}
                   >
                     Business Terms
-                  </a>
+                  </Link>
                 </Link>
                 <Link href="/CodeOfCunduct" legacyBehavior>
-                  <a
+                  <Link
+                    href="/CodeOfCunduct"
                     className={`dropdown-item ${isActive("/team") ? "active" : ""
                       }`}
                   >
                     Codes of Conduct
-                  </a>
+                  </Link>
                 </Link>
               </div>
             </div>
             <Link href="/Services" legacyBehavior>
-              <a
+              <Link
+                href="Services"
                 className={`nav-item nav-link ${isActive("/Services") ? "active" : ""
                   }`}
               >
                 Services
-              </a>
+              </Link>
             </Link>
 
 
 
             <Link href="/Contact" legacyBehavior>
-              <a
+              <Link
+                href="/Contact"
                 className={`nav-item nav-link ${isActive("/Contact") ? "active" : ""
                   }`}
               >
                 Contact
-              </a>
+              </Link>
             </Link>
             <Link href="/Carrer" legacyBehavior>
-              <a
+              <Link
+                href="/Carrer"
                 className={`nav-item nav-link ${isActive("/Carrer") ? "active" : ""
                   }`}
               >
                 Carrer
-              </a>
+              </Link>
             </Link>
 
-          {isUserLoggedIn? (
-                            <button
-                                className="btn btn-danger text-white h-25 mt-3 mx-2 border-0 btn-outline-dark"
-                                style={{ padding: "8px 16px", borderRadius: "5px" }}
-                                onClick={handleLogout}
-                            >
-                                Logout
-                            </button>
-                        ) : (
-                            <Link href="/Login" legacyBehavior>
-                                <button
-                                    className="btn btn-danger text-white h-25 mt-3 mx-2 border-0 btn-outline-dark"
-                                    style={{ padding: "8px 16px", borderRadius: "5px" }}
-                                >
-                                    Login
-                                </button>
-                            </Link>
-                        )}
-       {isUserLoggedIn && (
-  <>
-    {localStorage.getItem("user") && JSON.parse(localStorage.getItem("user")).role === "admin" ? (
-      <Link className="nav-item" href="/admin/Dashboard">
-        <button className="btn text-nowrap mt-3 btn-danger border-0 btn-outline-dark rounded-1 p-2 text-white">
-          Dashboard
-        </button>
-      </Link>
-    ) : (
-      <Link className="nav-item" href="/FreeQoute">
-        <button className="btn text-nowrap mt-3 btn-danger border-0 btn-outline-dark rounded-1 p-2 text-white">
-          Get a Free Quote
-        </button>
-      </Link>
-    )}
-  </>
-)}
+            {isUserLoggedIn ? (
+              <button
+                className="btn btn-danger text-white h-25 mt-3 mx-2 border-0 btn-outline-dark"
+                style={{ padding: "8px 16px", borderRadius: "5px" }}
+                onClick={handleLogout}
+              >
+                Logout
+              </button>
+            ) : (
+              <Link href="/Login" legacyBehavior>
+                <button
+                  className="btn btn-danger text-white h-25 mt-3 mx-2 border-0 btn-outline-dark"
+                  style={{ padding: "8px 16px", borderRadius: "5px" }}
+                >
+                  Login
+                </button>
+              </Link>
+            )}
+            {isUserLoggedIn && (
+              <>
+                {localStorage.getItem("user") && JSON.parse(localStorage.getItem("user")).role === "admin" ? (
+                  <Link className="nav-item" href="/admin/Dashboard">
+                    <button className="btn text-nowrap mt-3 btn-danger border-0 btn-outline-dark rounded-1 p-2 text-white">
+                      Dashboard
+                    </button>
+                  </Link>
+                ) : (
+                  <Link className="nav-item" href="/FreeQoute">
+                    <button className="btn text-nowrap mt-3 btn-danger border-0 btn-outline-dark rounded-1 p-2 text-white">
+                      Get a Free Quote
+                    </button>
+                  </Link>
+                )}
+              </>
+            )}
           </div>
         </div>
       </nav>

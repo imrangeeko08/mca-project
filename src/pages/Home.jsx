@@ -23,6 +23,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import { FaQuoteRight } from 'react-icons/fa';
 import { useRouter } from "next/router";
+import Link from "next/link";
 export default function Home() {
 
   useEffect(() => {
@@ -102,43 +103,43 @@ export default function Home() {
                         diam no. Kasd rebum ipsum et diam justo clita et kasd
                         rebum sea elitr.
                       </p>
-                      <a
+                      <Link
                         href=""
                         className="btn btn-primary py-2 px-3 py-md-3 px-md-5 me-3 animated"
                         data-aos="fade-left"
                         data-aos-delay="800"
                       >
                         Read More
-                      </a>
-                      <a
-        href="#"
-        className="btn btn-secondary py-2 px-3 py-md-3 px-md-5 animated"
-        data-aos="fade-right"
-        data-aos-delay="1000"
-        onClick={handleFreeQuoteClick}
-      >
-        Free Quote
-      </a>
+                      </Link>
+                      <Link
+                        href="#"
+                        className="btn btn-secondary py-2 px-3 py-md-3 px-md-5 animated"
+                        data-aos="fade-right"
+                        data-aos-delay="1000"
+                        onClick={handleFreeQuoteClick}
+                      >
+                        Free Quote
+                      </Link>
 
-      {showPopup && (
-        <div className="modal fade show" style={{ display: 'block' }} tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div className="modal-dialog">
-            <div className="modal-content">
-              <div className="modal-header">
-                <h5 className="modal-title" id="exampleModalLabel">Login Required</h5>
-                <button type="button" className="btn-close" onClick={closePopup}></button>
-              </div>
-              <div className="modal-body">
-                You need to log in to access the Free Quote page.
-              </div>
-              <div className="modal-footer">
-                <button type="button" className="btn btn-secondary" onClick={closePopup}>Close</button>
-                <button type="button" className="btn btn-primary" onClick={() => router.push('/Login')}>Login</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+                      {showPopup && (
+                        <div className="modal fade show" style={{ display: 'block' }} tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div className="modal-dialog">
+                            <div className="modal-content">
+                              <div className="modal-header">
+                                <h5 className="modal-title" id="exampleModalLabel">Login Required</h5>
+                                <button type="button" className="btn-close" onClick={closePopup}></button>
+                              </div>
+                              <div className="modal-body">
+                                You need to log in to access the Free Quote page.
+                              </div>
+                              <div className="modal-footer">
+                                <button type="button" className="btn btn-secondary" onClick={closePopup}>Close</button>
+                                <button type="button" className="btn btn-primary" onClick={() => router.push('/Login')}>Login</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -187,15 +188,15 @@ export default function Home() {
                         diam no. Kasd rebum ipsum et diam justo clita et kasd
                         rebum sea elitr.
                       </p>
-                      <a
+                      <Link
                         href=""
                         className="btn btn-primary py-2 px-3 py-md-3 px-md-5 me-3 animated"
                         data-aos="fade-left"
                         data-aos-delay="800"
                       >
                         Read More
-                      </a>
-                      <a
+                      </Link>
+                      <Link
                         href="/FreeQoute"
                         className="btn btn-secondary py-2 px-3 py-md-3 px-md-5 animated"
                         data-aos="fade-right"
@@ -204,7 +205,7 @@ export default function Home() {
 
                       >
                         Free Quote
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -293,9 +294,9 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <a href="" className="btn btn-primary py-3 px-5">
+              <Link href="" className="btn btn-primary py-3 px-5">
                 Explore More
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -398,12 +399,12 @@ export default function Home() {
                   Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam
                   lorem diam.
                 </p>
-                <a className="btn-slide mt-2" href="">
+                <Link className="btn-slide mt-2" href="">
                   <i>
                     <FaArrowRight />
                   </i>
                   <span>Read More</span>
-                </a>
+                </Link>
               </div>
             </div>
             <div
@@ -424,12 +425,12 @@ export default function Home() {
                   Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam
                   lorem diam.
                 </p>
-                <a className="btn-slide mt-2" href="">
+                <Link className="btn-slide mt-2" href="">
                   <i>
                     <FaArrowRight />
                   </i>
                   <span>Read More</span>
-                </a>
+                </Link>
               </div>
             </div>
             <div
@@ -450,12 +451,12 @@ export default function Home() {
                   Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam
                   lorem diam.
                 </p>
-                <a className="btn-slide mt-2" href="">
+                <Link className="btn-slide mt-2" href="">
                   <i>
                     <FaArrowRight />
                   </i>
                   <span>Read More</span>
-                </a>
+                </Link>
               </div>
             </div>
             <div
@@ -476,12 +477,12 @@ export default function Home() {
                   Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam
                   lorem diam.
                 </p>
-                <a className="btn-slide mt-2" href="">
+                <Link className="btn-slide mt-2" href="">
                   <i>
                     <FaArrowRight />
                   </i>
                   <span>Read More</span>
-                </a>
+                </Link>
               </div>
             </div>
             <div
@@ -502,12 +503,12 @@ export default function Home() {
                   Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam
                   lorem diam.
                 </p>
-                <a className="btn-slide mt-2" href="">
+                <Link className="btn-slide mt-2" href="">
                   <i>
                     <FaArrowRight />
                   </i>
                   <span>Read More</span>
-                </a>
+                </Link>
               </div>
             </div>
             <div
@@ -528,12 +529,12 @@ export default function Home() {
                   Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam
                   lorem diam.
                 </p>
-                <a className="btn-slide mt-2" href="">
+                <Link className="btn-slide mt-2" href="">
                   <i>
                     <FaArrowRight />
                   </i>
                   <span>Read More</span>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -745,7 +746,7 @@ export default function Home() {
           </Swiper>
         </div>
       </div> */}
-      
+
       {/* <!-- Testimonial End --> */}
     </main>
   );
