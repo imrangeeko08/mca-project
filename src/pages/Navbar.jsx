@@ -6,7 +6,7 @@ import Link from "next/link";
 import { FaChevronDown } from "react-icons/fa";
 import { GoArrowRight } from "react-icons/go";
 import Image from "next/image";
-import Logo from '../../public/Image/Logo.jpeg'
+import Logo from "../../public/Image/Logo.jpeg";
 const Navbar = ({ isUserLoggedIn }) => {
   const router = useRouter();
   const isActive = path => router.pathname === path;
@@ -19,19 +19,22 @@ const Navbar = ({ isUserLoggedIn }) => {
 
   // Handle logout
   const handleLogout = () => {
-    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem("isLoggedIn");
     setIsLoggedIn(false); // Update state to false
-    router.push('/Login'); // Navigate to login page
+    router.push("/Login"); // Navigate to login page
   };
 
   return (
     <div>
       <nav className="navbar navbar-expand-lg bg-white navbar-light shadow border-top border-5 border-primary top-0 sticky-top w-100  z-100 p-0">
-        <Link
-          href="/"
-          className="mx-3 py-1"
-        >
-          <img src="/Image/Logo.png" alt="Why Join Us" className="img-fluid" width={100} height={10} />
+        <Link href="/" className="mx-3 py-1">
+          <img
+            src="/Image/Logo.png"
+            alt="Why Join Us"
+            className="img-fluid"
+            width={100}
+            height={10}
+          />
         </Link>
 
         <button
@@ -45,15 +48,16 @@ const Navbar = ({ isUserLoggedIn }) => {
         <div className="collapse navbar-collapse" id="navbarCollapse">
           <div className="navbar-nav ms-3 gap-2  p-4 p-lg-0 me-auto position-relative">
             <div legacyBehavior className="dropdown nav-item  ">
-              <Link
-                href="/"
-                className={`dropdown-toggle nav-link ${isActive("/") ? "active" : ""
-                  }`}
+              <button
+                className={`dropdown-toggle nav-link ${
+                  isActive("/") ? "active" : ""
+                }`}
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
               >
-                MARKETS <FaChevronDown className={`ms-1`} />
-
-              </Link>
-              <ul className="submenu d-flex list-unstyled dropdown-menu   fade-up m-0">
+                MARKETS <FaChevronDown className="ms-1" />
+              </button>
+              <ul className="submenu-md list-unstyled dropdown-menu   fade-up m-0">
                 <Link href="/markets/Automative">
                   <li className="position-relative dropdown-item ">
                     {" "}
@@ -137,17 +141,19 @@ const Navbar = ({ isUserLoggedIn }) => {
                 <Link href="/About" legacyBehavior>
                   <Link
                     href="/About"
-                    className={`dropdown-item ${isActive("/price") ? "active" : ""
-                      }`}
+                    className={`dropdown-item ${
+                      isActive("/price") ? "active" : ""
+                    }`}
                   >
                     Company overviwe
                   </Link>
                 </Link>
-                <Link href="/ManagmentTeams" legacyBehavior>
+                <Link href="/About" legacyBehavior>
                   <Link
-                    href="/ManagmentTeams"
-                    className={`dropdown-item ${isActive("/features") ? "active" : ""
-                      }`}
+                    href="/About"
+                    className={`dropdown-item ${
+                      isActive("/features") ? "active" : ""
+                    }`}
                   >
                     Managment Teams
                   </Link>
@@ -155,8 +161,9 @@ const Navbar = ({ isUserLoggedIn }) => {
                 <Link href="/BusinessTerms" legacyBehavior>
                   <Link
                     href="/BusinessTerms"
-                    className={`dropdown-item ${isActive("/quote") ? "active" : ""
-                      }`}
+                    className={`dropdown-item ${
+                      isActive("/quote") ? "active" : ""
+                    }`}
                   >
                     Business Terms
                   </Link>
@@ -164,8 +171,9 @@ const Navbar = ({ isUserLoggedIn }) => {
                 <Link href="/CodeOfCunduct" legacyBehavior>
                   <Link
                     href="/CodeOfCunduct"
-                    className={`dropdown-item ${isActive("/team") ? "active" : ""
-                      }`}
+                    className={`dropdown-item ${
+                      isActive("/team") ? "active" : ""
+                    }`}
                   >
                     Codes of Conduct
                   </Link>
@@ -175,20 +183,20 @@ const Navbar = ({ isUserLoggedIn }) => {
             <Link href="/Services" legacyBehavior>
               <Link
                 href="Services"
-                className={`nav-item nav-link ${isActive("/Services") ? "active" : ""
-                  }`}
+                className={`nav-item nav-link ${
+                  isActive("/Services") ? "active" : ""
+                }`}
               >
                 Services
               </Link>
             </Link>
 
-
-
             <Link href="/Contact" legacyBehavior>
               <Link
                 href="/Contact"
-                className={`nav-item nav-link ${isActive("/Contact") ? "active" : ""
-                  }`}
+                className={`nav-item nav-link ${
+                  isActive("/Contact") ? "active" : ""
+                }`}
               >
                 Contact
               </Link>
@@ -196,8 +204,9 @@ const Navbar = ({ isUserLoggedIn }) => {
             <Link href="/Carrer" legacyBehavior>
               <Link
                 href="/Carrer"
-                className={`nav-item nav-link ${isActive("/Carrer") ? "active" : ""
-                  }`}
+                className={`nav-item nav-link ${
+                  isActive("/Carrer") ? "active" : ""
+                }`}
               >
                 Carrer
               </Link>
@@ -223,7 +232,8 @@ const Navbar = ({ isUserLoggedIn }) => {
             )}
             {isUserLoggedIn && (
               <>
-                {localStorage.getItem("user") && JSON.parse(localStorage.getItem("user")).role === "admin" ? (
+                {localStorage.getItem("user") &&
+                JSON.parse(localStorage.getItem("user")).role === "admin" ? (
                   <Link className="nav-item" href="/admin/Dashboard">
                     <button className="btn text-nowrap mt-3 btn-danger border-0 btn-outline-dark rounded-1 p-2 text-white">
                       Dashboard
@@ -241,8 +251,6 @@ const Navbar = ({ isUserLoggedIn }) => {
           </div>
         </div>
       </nav>
-
-
     </div>
   );
 };
