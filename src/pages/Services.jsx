@@ -39,13 +39,13 @@ const Services = () => {
       img: '/Image/testimonial-3.jpg',
       name: 'Michael Johnson',
       profession: 'Managing Director, Zenith Manufacturing',
-      text: 'Your team’s efficiency and dedication have set a benchmark in logistics services. We’re grateful for your consistent support and exceptional results.'
+      text: 'Your teams efficiency and dedication have set a benchmark in logistics services. We are grateful for your consistent support and exceptional results.'
     },
     {
       img: '/Image/testimonial-4.jpg',
       name: 'Sophia Brown',
       profession: 'Operations Manager, ClearPath Logistics',
-      text: 'The professionalism and reliability of your services have exceeded our expectations. It’s been a pleasure collaborating with such a skilled and proactive team.'
+      text: 'The professionalism and reliability of your services have exceeded our expectations. It is been a pleasure collaborating with such a skilled and proactive team.'
     },
   ];
 
@@ -96,7 +96,7 @@ const Services = () => {
                 </div>
                 <h4 className="mb-3">Ocean Freight</h4>
                 <p>
-                  Comprehensive ocean freight services to handle your global shipping needs. Whether it’s
+                  Comprehensive ocean freight services to handle your global shipping needs. Whether it is
                   full container loads or less-than-container loads, we offer cost-effective and
                   efficient solutions.
                 </p>
@@ -278,7 +278,7 @@ const Services = () => {
                     />
                     <div className="ms-4">
                       <h5 className="mb-1">{testimonial.name}</h5>
-                      <p className="m-0">{testimonial.profession}</p>
+                      <p className="m-0">{`${testimonial.profession}`}</p>
                     </div>
                   </div>
                   <p className="mb-0">{testimonial.text}</p>

@@ -134,19 +134,19 @@ const Carrer = () => {
           <div className="row justify-content-around">
             <div className="col-md-3 text-center  rounded px-3 py-3 shadow ">
               <blockquote className="blockquote  ">
-                <p>"Working here has been a transformative experience. The company values and encourages personal growth."</p>
+                <p>Working here has been a transformative experience. The company values and encourages personal growth.</p>
                 <footer className="blockquote-footer">Jane Doe</footer>
               </blockquote>
             </div>
             <div className="col-md-3 text-center rounded px-3 py-3 shadow">
               <blockquote className="blockquote  ">
-                <p>"The team culture here is amazing. Everyone is encouraged to contribute and grow."</p>
+                <p>The team culture here is amazing. Everyone is encouraged to contribute and grow.</p>
                 <footer className="blockquote-footer">John Smith</footer>
               </blockquote>
             </div>
             <div className="col-md-3 text-center  rounded px-3 py-3 shadow">
               <blockquote className="blockquote">
-                <p>"XYZ Logistics offers endless opportunities for development and learning."</p>
+                <p>XYZ Logistics offers endless opportunities for development and learning.</p>
                 <footer className="blockquote-footer">Emily Johnson</footer>
               </blockquote>
             </div>
@@ -271,7 +271,7 @@ const Carrer = () => {
             data-bs-parent="#faqAccordion"
           >
             <div className="accordion-body">
-              You can apply by clicking on the "Apply Now" button above, which will guide you through the application process.
+              You can apply by clicking on the Apply Now button above, which will guide you through the application process.
             </div>
           </div>
         </div>
@@ -287,7 +287,7 @@ const Carrer = () => {
               aria-expanded="false"
               aria-controls="collapseTwo"
             >
-              What are the benefits of working with APL Logistics?
+              What are the benefits of working with Instant Logistics?
             </button>
           </h5>
           <div
@@ -339,7 +339,7 @@ const Carrer = () => {
               aria-expanded="false"
               aria-controls="collapseFour"
             >
-              What is the company's policy on work-life balance?
+              What is the company policy on work-life balance?
             </button>
           </h5>
           <div
@@ -349,7 +349,7 @@ const Carrer = () => {
             data-bs-parent="#faqAccordion"
           >
             <div className="accordion-body">
-              APL Logistics values work-life balance and offers flexible work schedules where possible. We believe that a balanced life is key to job satisfaction and productivity.
+              Instant Logistics values work-life balance and offers flexible work schedules where possible. We believe that a balanced life is key to job satisfaction and productivity.
             </div>
           </div>
         </div>

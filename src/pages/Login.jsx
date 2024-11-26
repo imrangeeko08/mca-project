@@ -124,7 +124,7 @@ const Login = () => {
                         <button type="submit" className="btn btn-primary w-100 btn-outline-dark border-0 my-2 rounded-3">Sign In</button>
 
                         <div className="text-center text-light mt-3">
-                            <p>Don't have an account?{' '}
+                            <p>Do not have an account?{' '}
                                 <button onClick={() => router.push('/Signup')} className="btn btn-dark text-white rounded-3 btn-outline-danger border-0">
                                     Sign Up
                                 </button>

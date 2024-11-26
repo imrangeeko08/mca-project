@@ -51,7 +51,7 @@ const Automative = () => {
                 relationships. We understand that automotive manufacturing
                 requires specialized logistical management and far-reaching
                 coordination. Our established relationships with the automotive
-                sector’s key Original Equipment Manufacturers (OEM) and tier
+                sectors key Original Equipment Manufacturers (OEM) and tier
                 suppliers around the globe allow us to keep your production high
                 and your costs low.
               </p>

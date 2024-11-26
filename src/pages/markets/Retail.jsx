@@ -42,7 +42,7 @@ const Retail = () => {
       altText: "Stage 4",
       heading: "Trade Solutions",
       description:
-        "If you are looking at setting up a regional distribution center in Asia, trade compliance is a must. We can help from the beginning of the project through to go-live with proven trade compliance solutions tested in Asia’s tough retail markets.",
+        "If you are looking at setting up a regional distribution center in Asia, trade compliance is a must. We can help from the beginning of the project through to go-live with proven trade compliance solutions tested in Asias tough retail markets.",
       duration: 1200,
     },
   ];
